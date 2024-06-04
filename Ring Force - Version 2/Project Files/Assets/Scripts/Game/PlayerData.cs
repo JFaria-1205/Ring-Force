@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class PlayerData : MonoBehaviour
 {
-    public bool dataExists;
-
     public float playerHighScore;
     public float musicVolume;
     public float sfxVolume;
- 
+
+    public static PlayerData instane;
 
     private void Awake()
     {
+        instane = this;
+        DontDestroyOnLoad(gameObject);
         LoadPlayer();
     }
 
@@ -29,12 +30,16 @@ public class PlayerData : MonoBehaviour
 
         if (saveData != null)
         {
-            dataExists = true;
             playerHighScore = saveData.playerHighScore;
             musicVolume = saveData.musicVolume;
             sfxVolume = saveData.sfxVolume;
         }
         else
-            dataExists = false;
+        {
+            playerHighScore = 0;
+            musicVolume = 1;
+            sfxVolume = 1;
+        }
+            
     }
 }

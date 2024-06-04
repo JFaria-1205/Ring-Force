@@ -6,6 +6,8 @@ using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] GameObject playerDataSaverObject;
+
     [SerializeField] GameObject allPauseMenu;
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject settingsMenu;
@@ -20,7 +22,7 @@ public class GameManager : MonoBehaviour
     public bool handheldDevice = false;
 
     [SerializeField] PlayerMovement playerMovement;
-    [SerializeField] PlayerData playerData;
+    private PlayerData playerData;
 
     [SerializeField] GameObject platform;
     [SerializeField] GameObject platformStart;
@@ -52,6 +54,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        CheckForPlayerData();
         if (SystemInfo.deviceType == DeviceType.Handheld)
         {
             handheldDevice = true;
@@ -67,7 +70,7 @@ public class GameManager : MonoBehaviour
     }
 
     private void Start()
-    {
+    {              
         canSpawnPickup = false;
         Invoke("CanSpawnPickupReset", spawnPickupDelay);
     }
@@ -95,6 +98,15 @@ public class GameManager : MonoBehaviour
         {
             GameObject.FindGameObjectWithTag("Player").transform.Rotate(deathRotateX * Time.deltaTime, deathRotateY * Time.deltaTime, deathRotateZ * Time.deltaTime, Space.Self);
         }
+    }
+
+    private void CheckForPlayerData()
+    {
+        if (FindObjectOfType<PlayerData>() == null)
+        {
+            Instantiate(playerDataSaverObject);
+        }
+        playerData = FindObjectOfType<PlayerData>();
     }
 
     public void MultiplierChange(float change)

@@ -747,7 +747,6 @@ GameObject:
   - component: {fileID: 516911849}
   - component: {fileID: 516911850}
   - component: {fileID: 516911851}
-  - component: {fileID: 516911852}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -852,10 +851,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75c52885dff8de144bc709862a039e21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerData: {fileID: 516911852}
   hsText: {fileID: 566842553}
   mainMenu: {fileID: 1593457125}
   settingsMenu: {fileID: 2029636365}
+  playerDataSaveObject: {fileID: 7907393155431432380, guid: 190120ba0ca42434d8f4198c594178e2, type: 3}
 --- !u!114 &516911850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -885,22 +884,8 @@ MonoBehaviour:
   trackScore: 1
   highScore: 0
   scoreMultiplier: 1
---- !u!114 &516911852
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 516911844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 421836b4b40474f43b570274fc3c25f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dataExists: 0
-  playerHighScore: 0
-  musicVolume: 1
-  sfxVolume: 1
+  baseScoreIncrease: 0
+  distanceMultiplier: 0
 --- !u!1 &523684960
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,16 +6,21 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] PlayerData playerData;
+    private PlayerData playerData;
     [SerializeField] Text hsText;
     [SerializeField] GameObject mainMenu;
     [SerializeField] GameObject settingsMenu;
+    [SerializeField] GameObject playerDataSaveObject;
 
     float highScore = 0;
 
-    private void Start()
+    private void Awake()
     {
         LoadPlayer();
+    }
+
+    private void Start()
+    {        
         hsText.text = $"HIGH SCORE: {highScore}";
     }
 
@@ -65,6 +70,11 @@ public class MainMenu : MonoBehaviour
 
     public void LoadPlayer()
     {
+        if (FindObjectOfType<PlayerData>() == null)
+        {
+            Instantiate(playerDataSaveObject);
+        }
+        playerData = FindObjectOfType<PlayerData>();
         playerData.LoadPlayer();
         highScore = playerData.playerHighScore;
     }

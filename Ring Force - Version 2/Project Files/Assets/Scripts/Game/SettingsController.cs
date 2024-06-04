@@ -34,14 +34,10 @@ public class SettingsController : MonoBehaviour
     {
         playerData.LoadPlayer();
 
-        if (playerData.dataExists)
-        {
+        musicSlider.value = playerData.musicVolume;
+        sfxSlider.value = playerData.sfxVolume;
 
-            musicSlider.value = playerData.musicVolume;
-            sfxSlider.value = playerData.sfxVolume;
-
-            AudioManager.Instance.MusicVolume(playerData.musicVolume);
-            AudioManager.Instance.SfxVolume(playerData.sfxVolume);
-        }
+        AudioManager.Instance.MusicVolume(playerData.musicVolume);
+        AudioManager.Instance.SfxVolume(playerData.sfxVolume);
     }
 }

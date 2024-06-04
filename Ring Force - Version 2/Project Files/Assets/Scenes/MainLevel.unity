@@ -182,7 +182,6 @@ GameObject:
   - component: {fileID: 82062536}
   - component: {fileID: 82062537}
   - component: {fileID: 82062538}
-  - component: {fileID: 82062539}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -217,6 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28db4c09b40e7948900caf60baeffba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerDataSaverObject: {fileID: 7907393155431432380, guid: 190120ba0ca42434d8f4198c594178e2, type: 3}
   allPauseMenu: {fileID: 1090883390}
   pauseMenu: {fileID: 1288132600}
   settingsMenu: {fileID: 991415241}
@@ -228,7 +228,6 @@ MonoBehaviour:
   jumpControl2: {fileID: 813532489}
   handheldDevice: 0
   playerMovement: {fileID: 544590825}
-  playerData: {fileID: 82062539}
   platform: {fileID: 3868141830475189860, guid: 2c2c0842723f5434fb96ce6618cc99c6, type: 3}
   platformStart: {fileID: 912734431}
   score: {fileID: 1318465277}
@@ -281,22 +280,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddd78c95bc9655246b559db5c9c4e278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &82062539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 82062533}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 421836b4b40474f43b570274fc3c25f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dataExists: 0
-  playerHighScore: 0
-  musicVolume: 1
-  sfxVolume: 1
 --- !u!1 &84333840
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ public static class SaveSystem
     public static void SavePlayer (PlayerData playerData)
     {
         BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.persistentDataPath + "/playerdata.tog";
+        string path = System.IO.Directory.GetCurrentDirectory() + "/player.data";
         FileStream stream = new FileStream(path, FileMode.Create);
 
         SaveData saveData = new SaveData(playerData);
@@ -18,7 +18,7 @@ public static class SaveSystem
 
     public static SaveData LoadPlayer()
     {
-        string path = Application.persistentDataPath + "/playerdata.tog";
+        string path = System.IO.Directory.GetCurrentDirectory() + "/player.data";
         if (File.Exists(path))
         {
             BinaryFormatter formatter = new BinaryFormatter();
